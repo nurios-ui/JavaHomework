@@ -2,34 +2,38 @@ package lesson1.home;
 
 public class Homework1 {
     public static void main (String[] args) {
-        int a = 0;
+        int a = 5;
         int b = 8;
         int c = 4;
         int d = 3;
-        float result1;
+        //float result1;   без этой переменной можно обойтись
         String name = "Алексей";
-        int year = 1993;
+        int year = 400;
 
-        result1 = task1(a, b, c, d);
-        System.out.println(result1);
+       // result1 = calc(a, b, c, d);  без этой переменной можно обойтись
+        System.out.println("Реультат задания 1: " + calc(a, b, c, d));
 
-        task2(a, b);
+        System.out.println("Реультат задания 2: " + interval(a, b));
 
-        task3(a);
+        if (positNegat(a)) {
+            System.out.println("Реультат задания 3: " + "положительное число");
+        } else {
+            System.out.println("Реультат задания 3: " + "отрицательное число");
+        }
 
-        task4(name);
 
-        task5(year);
+        System.out.println("Реультат задания 4: " + greetings(name));
+
+        System.out.println("Реультат задания 5: " + "Год високосный? " + leap(year));
     }
 
-    public static float task1 (int valueA, int valueB, int valueC, float valueD) {
-            return valueA * (valueB + (valueC / valueD));
+    public static float calc (int valueA, int valueB, int valueC, int valueD) {
+            return valueA * (valueB + ((float)valueC / valueD));
     }
 
-    public static void task2 (int valueA, int valueB) {
+    public static boolean interval (int valueA, int valueB) {
         int sum = valueA + valueB;
-        boolean taskCondition = 10 < sum && sum <= 20;
-        System.out.println(taskCondition);
+        return (sum <= 20) && (sum >= 10);
        /* if (10 < sum && sum <= 20) {
             System.out.println("true");
         } else {
@@ -37,27 +41,32 @@ public class Homework1 {
             }*/
         }
 
-    public static void task3 (int value) {
-        if (value >= 0) {
-            System.out.println("положительное число");
+    public static boolean positNegat (int value) {
+        return value >= 0;
+       /* if (value >= 0) {
+            System.out.println("Реультат задания 3: " + "положительное число");
         } else {
-            System.out.println("отрицательное число");
-        }
+            System.out.println("Реультат задания 3: " + "отрицательное число");
+        }*/
     }
 
-    public static void task4 (String name) {
-        System.out.println("Привет, " + name + "!");
+    public static String greetings (String name) {
+        return "Привет, " + name + "!";
     }
 
-    public static void task5 (float year) {
+    /*public static String leap (float year) {
         if (year % 4 == 0) {
             if ((year % 100 != 0) || (year % 400 == 0)) {
-                System.out.println("Високосный");
+                return "Високосный";
             } else {
-                System.out.println("Не високосный");
+                return "Не високосный";
             }
         } else {
-            System.out.println("Не високосный");
+            return "Не високосный";
         }
+    }*/
+
+    public  static boolean leap (int year) {
+        return (year % 4 == 0) && (year % 100 != 0) || (year % 400 ==0);
     }
 }
