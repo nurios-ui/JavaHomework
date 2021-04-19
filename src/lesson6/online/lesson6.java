@@ -1,0 +1,2 @@
+package lesson6.online;public class lesson6 {
+}
