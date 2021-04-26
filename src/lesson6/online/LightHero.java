@@ -1,2 +1,8 @@
-package lesson6.online;public class LightHero {
+package lesson6.online;
+
+public class LightHero extends SuperHero {
+
+    public LightHero(String name, int attack, int health, int defence){
+        super(name, attack, health, defence);
+    }
 }

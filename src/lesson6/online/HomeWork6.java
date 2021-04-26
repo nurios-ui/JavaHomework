@@ -1,2 +1,4 @@
-package lesson6.online;public class HomeWork6 {
+package lesson6.online;
+
+public class HomeWork6 {
 }

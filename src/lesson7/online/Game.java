@@ -1,2 +1,8 @@
-package lesson7.online;public class Game {
+package lesson7.online;
+
+public class Game {
+
+    public  static void main(String[] args) {
+        new MainWindow();
+    }
 }
